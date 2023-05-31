@@ -16,3 +16,10 @@ steps:
     projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'UiPath Orchestrator'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+
+- task: UiPathDeploy@3
+  inputs:
+    orchestratorConnection: 'UiPath Orchestrator'
+    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    folderName: 'shared'
+
